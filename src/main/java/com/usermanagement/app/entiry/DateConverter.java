@@ -8,12 +8,22 @@ import java.util.Locale;
 
 public class DateConverter {
 
+   /**
+   * Converts Date to Srting
+   *
+   * @return date as string in format in format yyyy-MM-dd HH:mm:ss
+   */
     public static String convertDateToString(Date date) {
         SimpleDateFormat sdf =
                 new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         return sdf.format(date);
     }
 
+   /**
+   * Converts date as String in format yyyy-MM-dd to Date
+   *
+   * @return Date object
+   */
     public static Date convertStringToDate(String date) {
         DateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale
                 .ENGLISH);
