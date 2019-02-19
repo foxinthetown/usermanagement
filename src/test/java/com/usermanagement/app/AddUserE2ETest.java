@@ -1,8 +1,9 @@
 package com.usermanagement.app;
 
 import com.usermanagement.app.repository.UserRepository;
-import com.usermanagement.app.ui.MainPage;
-import com.usermanagement.app.ui.ResultPage;
+import com.usermanagement.app.ui.AbstractUiTest;
+import com.usermanagement.app.ui.pages.MainPage;
+import com.usermanagement.app.ui.pages.ResultPage;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

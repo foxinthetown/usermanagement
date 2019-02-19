@@ -1,4 +1,4 @@
-package com.usermanagement.app;
+package com.usermanagement.app.ui;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

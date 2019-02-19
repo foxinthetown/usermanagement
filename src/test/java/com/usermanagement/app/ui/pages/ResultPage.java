@@ -1,5 +1,6 @@
-package com.usermanagement.app.ui;
+package com.usermanagement.app.ui.pages;
 
+import com.usermanagement.app.ui.pages.AbstractPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
