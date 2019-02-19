@@ -1,7 +1,7 @@
 package com.usermanagement.app;
 
-import com.usermanagement.app.model.User;
-import com.usermanagement.app.model.UserId;
+import com.usermanagement.app.entiry.User;
+import com.usermanagement.app.entiry.UserId;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -25,25 +25,25 @@ import static org.hamcrest.Matchers.equalTo;
 @SpringBootTest
 public class UserEntityTest {
 
+    @Rule
+    public ExpectedException exceptionGrabber = ExpectedException.none();
+
     private ArrayList<User> userList = new ArrayList<>();
 
     private Date date = new Date(1990, 11, 11);
 
-    @Rule
-    public ExpectedException exceptionGrabber = ExpectedException.none();
-
     @Before
     public void setUp() {
-            userList.add(new User("TestFN", "TestLN", date, "1111111111",
-                    "test@test.com"));
-            userList.add(new User("TestFN1", "TestLN1", date, "1111111112",
-                    null));
-            userList.add(new User("TestFN2", "TestLN2", date, null,
-                    "test2@test.com"));
-            userList.add(new User("TestFN3", "TestLN3", date, null,
-                    null));
-            userList.add(new User("TestFN4", "TestLN4", date, "1111111114",
-                    "test4@test.com"));
+        userList.add(new User("TestFN", "TestLN", date, "1111111111",
+                "test@test.com"));
+        userList.add(new User("TestFN1", "TestLN1", date, "1111111112",
+                null));
+        userList.add(new User("TestFN2", "TestLN2", date, null,
+                "test2@test.com"));
+        userList.add(new User("TestFN3", "TestLN3", date, null,
+                null));
+        userList.add(new User("TestFN4", "TestLN4", date, "1111111114",
+                "test4@test.com"));
     }
 
     @Test

@@ -17,7 +17,7 @@ public class SampleWebJspApplication extends SpringBootServletInitializer {
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder
-                                                             application) {
+                                                         application) {
         return application.sources(SampleWebJspApplication.class);
     }
 }

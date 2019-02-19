@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <h1>Manage users page</h1>
+      <h1 id="header">Manage users page</h1>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
       <style>
          table {
@@ -29,7 +29,7 @@
       <form method="POST" name="add_user" action="user" autocomplete="on">
          First name:<input type="text" name="firstName"><br>
          Last name: <input type="text" name="lastName"><br>
-         Date of birth: <input type="date" name="dof"><br>
+         Date of birth: <input type="date" name="dob"><br>
          E-mail: <input type="email" name="email"><br>
          Phone: <input type="text" name="phone" maxlength="10"><br>
          <button type="submit">Add user</button>

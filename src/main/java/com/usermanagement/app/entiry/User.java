@@ -1,4 +1,4 @@
-package com.usermanagement.app.model;
+package com.usermanagement.app.entiry;
 
 import org.springframework.util.Assert;
 
@@ -6,17 +6,17 @@ import javax.persistence.*;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 
-import static com.usermanagement.app.model.DateConverter.convertStringToDate;
+import static com.usermanagement.app.entiry.DateConverter.convertStringToDate;
 
 @Entity
 @Table(name = "users")
 public class User {
 
     @Embedded
-    UserId userId;
+    private UserId userId;
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", unique = true, nullable = false)
     private long id;
 
@@ -36,12 +36,13 @@ public class User {
         this.email = email;
     }
 
-    public User() { }
+    public User() {
+    }
 
     public User(HttpServletRequest user) {
         String firstName = user.getParameter("firstName");
         String lastName = user.getParameter("lastName");
-        String dob = user.getParameter("dof");
+        String dob = user.getParameter("dob");
         Assert.hasLength(firstName, "Username must not be empty");
         Assert.hasLength(lastName, "Username must not be empty");
         Assert.hasLength(dob, "Date of birth must not be empty");

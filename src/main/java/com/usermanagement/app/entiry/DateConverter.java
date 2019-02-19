@@ -1,4 +1,4 @@
-package com.usermanagement.app.model;
+package com.usermanagement.app.entiry;
 
 import java.text.DateFormat;
 import java.text.ParseException;

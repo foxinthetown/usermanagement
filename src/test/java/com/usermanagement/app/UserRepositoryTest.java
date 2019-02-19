@@ -1,8 +1,8 @@
 package com.usermanagement.app;
 
-import com.usermanagement.app.model.User;
-import com.usermanagement.app.model.UserId;
-import com.usermanagement.app.model.UserRepository;
+import com.usermanagement.app.entiry.User;
+import com.usermanagement.app.entiry.UserId;
+import com.usermanagement.app.repository.UserRepository;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
@@ -19,7 +19,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.ArrayList;
 import java.util.Date;
 
-import static com.usermanagement.app.model.DateConverter.convertDateToString;
+import static com.usermanagement.app.entiry.DateConverter.convertDateToString;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
@@ -113,6 +113,6 @@ public class UserRepositoryTest {
 
     @After
     public void dearDown() {
-        userRepository.deleteAll();
+       userRepository.deleteAll();
     }
 }

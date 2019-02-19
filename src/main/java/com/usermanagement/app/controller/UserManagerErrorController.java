@@ -1,4 +1,4 @@
-package com.usermanagement.app.controllers;
+package com.usermanagement.app.controller;
 
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.stereotype.Controller;

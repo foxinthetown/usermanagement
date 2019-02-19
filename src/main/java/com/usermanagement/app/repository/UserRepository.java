@@ -1,5 +1,6 @@
-package com.usermanagement.app.model;
+package com.usermanagement.app.repository;
 
+import com.usermanagement.app.entiry.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

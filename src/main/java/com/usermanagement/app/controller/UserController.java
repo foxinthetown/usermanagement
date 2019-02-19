@@ -1,7 +1,7 @@
-package com.usermanagement.app.controllers;
+package com.usermanagement.app.controller;
 
-import com.usermanagement.app.model.User;
-import com.usermanagement.app.model.UserServiceImpl;
+import com.usermanagement.app.entiry.User;
+import com.usermanagement.app.service.UserServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,14 +65,7 @@ public class UserController {
     public @ResponseBody
     ModelAndView userSubmit(HttpServletRequest parametersMap) {
         User user = new User(parametersMap);
-        if (!userService.isUserExist(user)) {
-            userService.addUser(user);
-        } else {
-            long id = userService.findUserByName(user).getId();
-            userService.updateUserInfoById(id, parametersMap.getParameter
-                            ("email"),
-                    parametersMap.getParameter("phone"));
-        }
+        userService.addUser(user);
         return new ModelAndView("redirect:/result");
     }
 
