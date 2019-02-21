@@ -1,7 +1,7 @@
 package com.usermanagement.app.controller;
 
 import com.usermanagement.app.entiry.User;
-import com.usermanagement.app.service.UserServiceImpl;
+import com.usermanagement.app.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +20,7 @@ import java.util.List;
 public class UserController {
 
     @Autowired
-    private UserServiceImpl userService;
+    private UserService userService;
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 

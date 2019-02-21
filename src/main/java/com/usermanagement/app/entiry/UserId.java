@@ -14,13 +14,13 @@ public class UserId implements Serializable {
     @Column(name = "last_name", nullable = false)
     private String lastName;
 
-    @Column(name = "dof", nullable = false)
-    private Date dof;
+    @Column(name = "dof", nullable = false) //FIXME: => dob
+    private Date dob;
 
-    UserId(String firstName, String lastName, Date dof) {
+    UserId(String firstName, String lastName, Date dob) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.dof = dof;
+        this.dob = dob;
     }
 
     public UserId() {
@@ -42,11 +42,11 @@ public class UserId implements Serializable {
         this.lastName = lastName;
     }
 
-    public Date getDof() {
-        return dof;
+    public Date getDob() {
+        return dob;
     }
 
-    public void setDof(Date dof) {
-        this.dof = dof;
+    public void setDob(Date dob) {
+        this.dob = dob;
     }
 }

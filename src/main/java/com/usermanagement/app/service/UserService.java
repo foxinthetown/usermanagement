@@ -11,10 +11,10 @@ import java.util.List;
 import static com.usermanagement.app.entiry.DateConverter.convertDateToString;
 
 @Service
-public class UserServiceImpl {
+public class UserService {
 
     @Autowired
-    UserRepository userRepository;
+    private UserRepository userRepository;
 
     public List<User> findAll() {
         return userRepository.findAll();
@@ -25,8 +25,7 @@ public class UserServiceImpl {
             userRepository.saveAndFlush(user);
         } else {
             long id = findUserByName(user).getId();
-            updateUserInfoById(id, user.getEmail(),
-                    user.getPhone());
+            updateUserInfoById(id, user.getEmail(), user.getPhone());
         }
         return user;
     }
@@ -34,13 +33,13 @@ public class UserServiceImpl {
     private boolean isUserExist(User user) {
         UserId userId = user.getUserId();
         return userRepository.isUserExist(userId.getFirstName(), userId
-                .getLastName(), convertDateToString(userId.getDof())) == 1;
+                .getLastName(), convertDateToString(userId.getDob())) == 1;
     }
 
     private User findUserByName(User user) {
         UserId userId = user.getUserId();
         return userRepository.findByName(userId.getFirstName(), userId
-                .getLastName(), userId.getDof());
+                .getLastName(), userId.getDob());
     }
 
     public void updateUserInfoById(long id, String email, String phone) {

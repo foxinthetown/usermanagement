@@ -46,8 +46,7 @@ public class User {
         Assert.hasLength(firstName, "Username must not be empty");
         Assert.hasLength(lastName, "Username must not be empty");
         Assert.hasLength(dob, "Date of birth must not be empty");
-        this.userId = new UserId(firstName, lastName,
-                convertStringToDate(dob));
+        this.userId = new UserId(firstName, lastName, convertStringToDate(dob));
         this.email = user.getParameter("email");
         this.phone = user.getParameter("phone");
     }

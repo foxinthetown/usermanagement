@@ -52,7 +52,7 @@ public class UserEntityTest {
         UserId userId = user.getUserId();
         assertThat(userId.getFirstName(), equalTo("TestFN"));
         assertThat(userId.getLastName(), equalTo("TestLN"));
-        assertThat(userId.getDof(), equalTo(date));
+        assertThat(userId.getDob(), equalTo(date));
         assertThat(user.getPhone(), equalTo("1111111111"));
         assertThat(user.getEmail(), equalTo("test@test.com"));
     }
@@ -63,7 +63,7 @@ public class UserEntityTest {
         UserId userId = user.getUserId();
         assertThat(userId.getFirstName(), equalTo("TestFN1"));
         assertThat(userId.getLastName(), equalTo("TestLN1"));
-        assertThat(userId.getDof(), equalTo(date));
+        assertThat(userId.getDob(), equalTo(date));
         assertThat(user.getPhone(), equalTo("1111111112"));
         assertThat(user.getEmail(), equalTo(null));
     }
@@ -74,7 +74,7 @@ public class UserEntityTest {
         UserId userId = user.getUserId();
         assertThat(userId.getFirstName(), equalTo("TestFN2"));
         assertThat(userId.getLastName(), equalTo("TestLN2"));
-        assertThat(userId.getDof(), equalTo(date));
+        assertThat(userId.getDob(), equalTo(date));
         assertThat(user.getEmail(), equalTo("test2@test.com"));
         assertThat(user.getPhone(), equalTo(null));
     }
@@ -85,7 +85,7 @@ public class UserEntityTest {
         UserId userId = user.getUserId();
         assertThat(userId.getFirstName(), equalTo("TestFN3"));
         assertThat(userId.getLastName(), equalTo("TestLN3"));
-        assertThat(userId.getDof(), equalTo(date));
+        assertThat(userId.getDob(), equalTo(date));
         assertThat(user.getEmail(), equalTo(null));
         assertThat(user.getPhone(), equalTo(null));
     }

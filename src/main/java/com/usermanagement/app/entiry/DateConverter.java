@@ -8,30 +8,31 @@ import java.util.Locale;
 
 public class DateConverter {
 
-   /**
-   * Converts Date to Srting
-   *
-   * @return date as string in format in format yyyy-MM-dd HH:mm:ss
-   */
+    private static final String DATE_FORMAT = "yyyy-MM-dd";
+    private static final String TIME_FORMAT = "HH:mm:ss";
+
+    /**
+     * Converts Date to Srting
+     *
+     * @return date as string in format in format yyyy-MM-dd HH:mm:ss
+     */
     public static String convertDateToString(Date date) {
-        SimpleDateFormat sdf =
-                new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT + " " + TIME_FORMAT);
         return sdf.format(date);
     }
 
-   /**
-   * Converts date as String in format yyyy-MM-dd to Date
-   *
-   * @return Date object
-   */
-    public static Date convertStringToDate(String date) {
-        DateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale
-                .ENGLISH);
+    /**
+     * Converts date as String in format yyyy-MM-dd to Date
+     *
+     * @return Date object
+     */
+    static Date convertStringToDate(String date) {
+        DateFormat format = new SimpleDateFormat(DATE_FORMAT, Locale.ENGLISH);
         try {
             return format.parse(date);
         } catch (ParseException e) {
-            throw new AssertionError("Data format is incorrect, it should be " +
-                    "yyyy-MM-dd");
+            String msg = "Data format is incorrect, it should be " + DATE_FORMAT;
+            throw new AssertionError(msg, e);
         }
     }
 }

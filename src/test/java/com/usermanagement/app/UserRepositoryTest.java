@@ -61,7 +61,7 @@ public class UserRepositoryTest {
         User addedUser = userRepository.saveAndFlush(user);
         assertThat(userRepository.isUserExist(userId.getFirstName(), userId
                         .getLastName(),
-                convertDateToString(userId.getDof())),
+                convertDateToString(userId.getDob())),
                 equalTo(1));
         assertThat(addedUser.getEmail(),
                 equalTo(user.getEmail()));
@@ -75,10 +75,10 @@ public class UserRepositoryTest {
         UserId userId = user.getUserId();
         userRepository.saveAndFlush(user);
         User addedUser = userRepository.findByName(userId.getFirstName(),
-                userId.getLastName(), userId.getDof());
+                userId.getLastName(), userId.getDob());
         assertThat(userRepository.isUserExist(userId.getFirstName(), userId
                         .getLastName(),
-                convertDateToString(userId.getDof())),
+                convertDateToString(userId.getDob())),
                 equalTo(1));
         assertThat(addedUser.getEmail(),
                 equalTo(user.getEmail()));
@@ -92,7 +92,7 @@ public class UserRepositoryTest {
         UserId userId = user.getUserId();
         userRepository.saveAndFlush(user);
         long id = userRepository.findByName(userId.getFirstName(), userId
-                .getLastName(), userId.getDof()).getId();
+                .getLastName(), userId.getDob()).getId();
         userRepository.updateUserInfo("test2@test2.com", "1111111123", id);
         assertThat(userRepository.findById(id).get().getPhone(), equalTo
                 ("1111111123"));
@@ -107,7 +107,7 @@ public class UserRepositoryTest {
         userRepository.delete(user);
         assertThat(userRepository.isUserExist(userId.getFirstName(), userId
                         .getLastName(),
-                convertDateToString(userId.getDof())),
+                convertDateToString(userId.getDob())),
                 equalTo(0));
     }
 
