@@ -54,7 +54,7 @@
                </td>
                <td>${user.userId.firstName}</td>
                <td>${user.userId.lastName}</td>
-               <td>${user.userId.dof}</td>
+               <td>${user.userId.dob}</td>
                <td>${user.email}</td>
                <td>${user.phone}</td>
                <td>
